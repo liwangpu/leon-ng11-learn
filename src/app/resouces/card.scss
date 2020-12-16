@@ -1,0 +1,34 @@
+@mixin Card {
+    position: relative;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+
+    div.box-container {
+        display: flex;
+        margin-top: 150px;
+
+        &>* {
+            &:not(:last-child) {
+                margin-right: 150px;
+            }
+        }
+    }
+
+    div.box {
+        display: block;
+        width: 150px;
+        height: 150px;
+        border: 1px solid gray;
+        p.title{
+            height: 20px;
+            line-height: 20px;
+            text-align: center;
+            margin: 0;
+            border-bottom: 1px solid gray;
+            color: white;
+            background-color: gray;
+        }
+    }
+
+}

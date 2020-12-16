@@ -1,0 +1,10 @@
+:host {
+    display: block;
+    min-width: 1050px;
+
+    div.container {
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+    }
+}

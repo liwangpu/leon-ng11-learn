@@ -1,21 +1,18 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { HomeComponent } from './components/home/home.component';
 
 const routes: Routes = [
     {
-        path: 'customer',
-        loadChildren: () => import('./customer/customer.module').then(m => m.CustomerModule)
+        path: 'home',
+        component: HomeComponent
     },
-    {
-        path: 'school',
-        loadChildren: () => import('./school/school.module').then(m => m.SchoolModule)
-    },
-    { path: '', pathMatch: 'full', redirectTo: 'customer' },
-    { path: '**', redirectTo: 'customer' }
+    { path: '', pathMatch: 'full', redirectTo: 'home' },
+    { path: '**', redirectTo: 'home' }
 ];
 
 @NgModule({
-    imports: [RouterModule.forRoot(routes, { enableTracing: false, initialNavigation: 'enabled' })],
+    imports: [RouterModule.forRoot(routes)],
     exports: [RouterModule]
 })
 export class AppRoutingModule { }

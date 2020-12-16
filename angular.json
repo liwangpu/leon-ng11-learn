@@ -89,6 +89,7 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
+            "port": 8100,
             "browserTarget": "leon-ng11-learn:build"
           },
           "configurations": {
@@ -106,5 +107,8 @@
       }
     }
   },
-  "defaultProject": "leon-ng11-learn"
+  "defaultProject": "leon-ng11-learn",
+  "cli": {
+    "analytics": false
+  }
 }

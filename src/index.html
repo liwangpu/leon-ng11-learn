@@ -1,13 +1,28 @@
 <!doctype html>
 <html lang="en">
+
 <head>
-  <meta charset="utf-8">
-  <title>LeonNg11Learn</title>
-  <base href="/">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <meta charset="utf-8">
+    <title>LeonNg11Learn</title>
+    <base href="/">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <script>
+        window.onload = () => {
+            var btnTest = document.getElementById('btnTest');
+            btnTest.addEventListener('click', test);
+        };
+
+        function test() {
+            // console.log(1);
+            window['myCab']();
+        }
+    </script>
 </head>
+
 <body>
-  <app-root></app-root>
+    <button id="btnTest">点我</button>
+    <app-root></app-root>
 </body>
+
 </html>

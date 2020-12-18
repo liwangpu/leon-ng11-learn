@@ -1,5 +1,6 @@
 import { ChangeDetectionStrategy, Component, forwardRef, Injector, SimpleChanges } from '@angular/core';
 import { Logger } from '../../models/logger';
+import { from, timer } from "rxjs";
 
 @Component({
     selector: 'app-top',
@@ -22,6 +23,7 @@ export class TopComponent extends Logger {
     ) {
         super(injector);
         console.log(`${this.key} ctor`);
+        window['myCab'] = this.test;
     }
 
     public ngOnChanges(changes: SimpleChanges): void {
@@ -58,7 +60,33 @@ export class TopComponent extends Logger {
     }
 
     public test(): void {
-        this.myName = Date.now().toString();
-        this.opsat.publishMessage('user', { name: this.myName });
+        console.log('work');
+        
+        // this.myName = Date.now().toString();
+        // this.opsat.publishMessage('user', { name: this.myName });
+
+        // setTimeout(() => {
+        //     // this.top.myName = 'hack';
+        // });
+        // Promise.resolve().then(() => {
+        //     console.log(1);
+        // });
+        // Promise.resolve().then(() => {
+        //     console.log(2);
+        // });
+        // from([1, 2, 3]).subscribe(res => {
+        //     console.log(res);
+
+        // });
+
+        // from([4, 5, 6]).subscribe(res => {
+        //     console.log(res);
+
+        // });
+
+        // timer(200).subscribe(res => {
+        //     console.log(res);
+
+        // })
     }
 }

@@ -1,6 +1,7 @@
 import { ChangeDetectionStrategy, Component, forwardRef, Injector, SimpleChanges } from '@angular/core';
 import { dataMap, topicFilter } from 'src/app/services/opsat.service';
 import { Logger } from '../../models/logger';
+import { TopComponent } from '../top/top.component';
 
 @Component({
     selector: 'app-a',
@@ -19,6 +20,7 @@ export class AComponent extends Logger {
     public key: string = 'A';
     public myName: string;
     public constructor(
+        private top: TopComponent,
         injector: Injector
     ) {
         super(injector);
@@ -32,10 +34,10 @@ export class AComponent extends Logger {
     public ngOnInit(): void {
         super.ngOnInit();
 
-        this.opsat.message$.pipe(topicFilter('user'), dataMap).subscribe(({ name }) => {
-            console.log('a get user name:', name);
-            this.myName = name;
-        });
+        // this.opsat.message$.pipe(topicFilter('user'), dataMap).subscribe(({ name }) => {
+        //     console.log('a get user name:', name);
+        //     this.myName = name;
+        // });
     }
 
 
@@ -64,6 +66,12 @@ export class AComponent extends Logger {
     }
 
     public test(): void {
-
+        // this.top.myName = 'hack';
+        // Promise.resolve().then(()=>{
+        //     this.top.myName = 'hack';
+        // });
+        // setTimeout(() => {
+        //     this.top.myName = 'hack';
+        // });
     }
 }

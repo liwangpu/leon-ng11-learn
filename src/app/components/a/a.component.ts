@@ -17,7 +17,7 @@ import { Logger } from '../../models/logger';
 export class AComponent extends Logger {
 
     public key: string = 'A';
-    public myName: string;
+    public myName: string = 'a1 default';
     public constructor(
         injector: Injector
     ) {
@@ -32,9 +32,17 @@ export class AComponent extends Logger {
     public ngOnInit(): void {
         super.ngOnInit();
 
-        this.opsat.message$.pipe(topicFilter('user'), dataMap).subscribe(({ name }) => {
-            console.log('a get user name:', name);
-            this.myName = name;
+        // this.opsat.message$.pipe(topicFilter('user'), dataMap).subscribe(({ name }) => {
+        //     console.log('a get user name:', name);
+        //     this.myName = name;
+        // });
+
+        new Promise(res => {
+            res('test');
+        }).then(res => {
+            console.log('promise work..................');
+
+            this.myName = res as any;
         });
     }
 

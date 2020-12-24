@@ -16,7 +16,7 @@ import { Logger } from '../../models/logger';
 export class TopComponent extends Logger {
 
     public key: string = 'Top';
-    public myName: string;
+    public myName: string = 'default';
     public constructor(
         injector: Injector
     ) {
@@ -30,6 +30,31 @@ export class TopComponent extends Logger {
 
     public ngOnInit(): void {
         super.ngOnInit();
+
+
+        new Promise(resolve => {
+            resolve(1);
+        }).then(res => {
+            console.log(`promise work:`, res);
+            this.myName=`promise 1`;
+        });
+
+        new Promise(resolve => {
+            resolve(2);
+        }).then(res => {
+            console.log(`promise work:`, res);
+            this.myName=`promise 2`;
+        });
+
+        setTimeout(() => {
+            console.log(`settimeout work: 1`);
+            this.myName=`settimeout 1`;
+        });
+
+        setTimeout(() => {
+            console.log(`settimeout work: 2`);
+            this.myName=`settimeout 2`;
+        });
     }
 
 
@@ -58,7 +83,24 @@ export class TopComponent extends Logger {
     }
 
     public test(): void {
-        this.myName = Date.now().toString();
-        this.opsat.publishMessage('user', { name: this.myName });
+        // this.myName = Date.now().toString();
+        // this.opsat.publishMessage('user', { name: this.myName });
+        new Promise(resolve => {
+            resolve(1);
+        }).then(res => {
+            console.log(`promise work:`, res);
+            this.myName=`promise 1`;
+        });
+
+        new Promise(resolve => {
+            resolve(2);
+        }).then(res => {
+            console.log(`promise work:`, res);
+            this.myName=`promise 2`;
+        });
+        setTimeout(() => {
+            console.log(`settimeout work: 3`);
+            this.myName=`settimeout 3`;
+        });
     }
 }

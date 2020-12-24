@@ -32,10 +32,10 @@ export class A1Component extends Logger {
     public ngOnInit(): void {
         super.ngOnInit();
 
-        this.opsat.message$.pipe(topicFilter('user'), dataMap).subscribe(({ name }) => {
-            console.log('a1 get user name:', name);
-            this.myName = name;
-        });
+        // this.opsat.message$.pipe(topicFilter('user'), dataMap).subscribe(({ name }) => {
+        //     console.log('a1 get user name:', name);
+        //     this.myName = name;
+        // });
     }
 
 

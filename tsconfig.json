@@ -1,29 +1,30 @@
 {
-  "compileOnSave": false,
-  "compilerOptions": {
-    "baseUrl": "./",
-    "outDir": "./dist/out-tsc",
-    "sourceMap": true,
-    "declaration": false,
-    "downlevelIteration": true,
-    "experimentalDecorators": true,
-    "moduleResolution": "node",
-    "importHelpers": true,
-    "target": "es2015",
-    "module": "es2020",
-    "lib": [
-      "es2018",
-      "dom"
-    ],
-    "paths": {
-      "foo": [
-        "dist/foo/foo",
-        "dist/foo"
-      ],
-      "baz": [
-        "dist/baz/baz",
-        "dist/baz"
-      ]
+    "compileOnSave": false,
+    "compilerOptions": {
+        "baseUrl": "./",
+        "outDir": "./dist/out-tsc",
+        "sourceMap": true,
+        "declaration": false,
+        "downlevelIteration": true,
+        "experimentalDecorators": true,
+        "moduleResolution": "node",
+        "importHelpers": true,
+        "target": "es2015",
+        "module": "es2020",
+        "lib": [
+            "es2018",
+            "dom"
+        ],
+        "paths": {
+            "foo": [
+                "projects/foo/src/public-api.ts"
+            ],
+            "bar": [
+                "projects/bar/src/public-api.ts"
+            ],
+            "baz": [
+                "projects/baz/src/public-api.ts"
+            ]
+        }
     }
-  }
 }

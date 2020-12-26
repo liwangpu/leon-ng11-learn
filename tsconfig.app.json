@@ -8,6 +8,9 @@
             "foo": [
                 "dist/foo"
             ],
+            "bar": [
+                "dist/bar"
+            ],
             "baz": [
                 "dist/baz"
             ]

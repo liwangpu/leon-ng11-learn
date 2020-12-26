@@ -3,8 +3,16 @@ import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
     {
-        path: 'cool',
-        loadChildren: () => import('./cool/cool.module').then(m => m.CoolModule)
+        path: 'foo',
+        loadChildren: () => import('./foo-infrastructure/foo-infrastructure.module').then(m => m.FooInfrastructureModule)
+    },
+    {
+        path: 'bar',
+        loadChildren: () => import('./bar-infrastructure/bar-infrastructure.module').then(m => m.BarInfrastructureModule)
+    },
+    {
+        path: 'baz',
+        loadChildren: () => import('./baz-infrastructure/baz-infrastructure.module').then(m => m.BazInfrastructureModule)
     }
 ];
 

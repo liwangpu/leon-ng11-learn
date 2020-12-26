@@ -1,2 +1,2 @@
-export * from './dashboard/dashboard.module';
-export * from './greet/greet.module';
+export * from './dashboard/public-api';
+export * from './greet/public-api';

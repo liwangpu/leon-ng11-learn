@@ -8,7 +8,8 @@
         "test": "ng test",
         "lint": "ng lint",
         "build-lib": "ng build foo --prod && ng build bar --prod && ng build baz --prod",
-        "analyze": "npm run build-lib && ng build --prod --stats-json && webpack-bundle-analyzer ./dist/learn/stats.json"
+        "analyze": "ng build --prod --stats-json && webpack-bundle-analyzer ./dist/learn/stats.json",
+        "build-and-analyze": "npm run build-lib && npm run analyze"
     },
     "private": true,
     "dependencies": {

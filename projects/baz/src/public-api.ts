@@ -1,2 +1,2 @@
-export * from './lib/dashboard';
-export * from './lib/greet';
+export * from './dashboard/public-api';
+export * from './greet/public-api';

@@ -7,7 +7,7 @@
         "build": "ng build",
         "test": "ng test",
         "lint": "ng lint",
-        "build-lib": "ng build foo --prod && ng build bar --prod && ng build baz --prod",
+        "build-lib": "ng build foo --prod && ng build bar --prod && ng build baz --prod && ng build my-lib --prod",
         "analyze": "ng build --prod --stats-json && webpack-bundle-analyzer ./dist/learn/stats.json",
         "build-and-analyze": "npm run build-lib && npm run analyze"
     },

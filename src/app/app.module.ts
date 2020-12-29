@@ -3,7 +3,9 @@ import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { GreetModule } from "baz";
+// import { GreetModule } from "baz";
+// import { MyBookModule } from "baz/my-book";
+import { MyLibModule } from 'my-lib';
 
 @NgModule({
     declarations: [
@@ -13,7 +15,9 @@ import { GreetModule } from "baz";
         BrowserModule,
         BrowserAnimationsModule,
         AppRoutingModule,
-        GreetModule
+        // GreetModule,
+        // MyBookModule,
+        MyLibModule
     ],
     providers: [],
     bootstrap: [AppComponent]

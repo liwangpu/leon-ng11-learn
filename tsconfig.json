@@ -23,8 +23,21 @@
                 "projects/bar/src/public-api.ts"
             ],
             "baz": [
-                "projects/baz/src/public-api.ts"
+                "projects/bar/src/public-api.ts"
+            ],
+            "baz/*": [
+                "projects/baz/*"
+            ],
+            "my-lib": [
+                "projects/my-lib/src/public-api.ts"
             ]
         }
-    }
+    },
+    "files": [
+        "src/main.ts",
+        "src/polyfills.ts"
+    ],
+    "include": [
+        "src/**/*.d.ts"
+    ]
 }

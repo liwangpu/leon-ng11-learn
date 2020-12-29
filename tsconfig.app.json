@@ -13,6 +13,12 @@
             ],
             "baz": [
                 "dist/baz"
+            ],
+            "baz/*": [
+                "dist/baz/*"
+            ],
+            "my-lib": [
+                "dist/my-lib"
             ]
         }
     },

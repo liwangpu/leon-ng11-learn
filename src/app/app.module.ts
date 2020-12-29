@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 // import { GreetModule } from "baz";
 // import { MyBookModule } from "baz/my-book";
-import { MyLibModule } from 'my-lib';
+// import { MyLibModule } from 'my-lib';
 
 @NgModule({
     declarations: [
@@ -17,7 +17,7 @@ import { MyLibModule } from 'my-lib';
         AppRoutingModule,
         // GreetModule,
         // MyBookModule,
-        MyLibModule
+        // MyLibModule
     ],
     providers: [],
     bootstrap: [AppComponent]

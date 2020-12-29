@@ -22,9 +22,6 @@
             "bar": [
                 "projects/bar/src/public-api.ts"
             ],
-            "baz": [
-                "projects/bar/src/public-api.ts"
-            ],
             "baz/*": [
                 "projects/baz/*"
             ],

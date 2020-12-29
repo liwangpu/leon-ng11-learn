@@ -6,7 +6,7 @@
         "umdModuleIds": {
             "bar": "bar",
             "foo": "foo",
-            "baz/shared": "baz/shared"
+            "baz": "baz"
         }
     }
 }

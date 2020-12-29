@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 // import { TaskType as BarTaskType } from "bar";
 // import { TaskType as FooTaskType } from "foo";
-import { TaskType as BazTaskType } from "baz/shared";
+import { TaskType as BazTaskType } from "baz";
 
 @Component({
     selector: 'lib-my-lib',

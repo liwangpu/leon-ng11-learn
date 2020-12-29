@@ -11,6 +11,9 @@
             "bar": [
                 "dist/bar"
             ],
+            "baz": [
+                "dist/baz"
+            ],
             "baz/*": [
                 "dist/baz/*"
             ],

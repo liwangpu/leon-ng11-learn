@@ -1,1 +1,1 @@
-export const defaultValue = 1;
+export const _packageName: string = 'baz';

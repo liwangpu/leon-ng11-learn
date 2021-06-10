@@ -6,7 +6,8 @@
     "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
-    "lint": "ng lint"
+    "lint": "ng lint",
+    "server": "json-server db.js --port 3005"
   },
   "private": true,
   "dependencies": {
@@ -18,7 +19,15 @@
     "@angular/platform-browser": "~11.0.4",
     "@angular/platform-browser-dynamic": "~11.0.4",
     "@angular/router": "~11.0.4",
+    "@ngrx/effects": "^11.1.1",
+    "@ngrx/store": "^11.1.1",
+    "@ngrx/store-devtools": "^11.1.1",
+    "faker": "^5.5.3",
+    "lodash": "^4.17.21",
+    "moment": "^2.29.1",
+    "ng-zorro-antd": "^11.4.2",
     "rxjs": "~6.6.0",
+    "subsink": "^1.0.2",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.2"
   },
@@ -27,6 +36,9 @@
     "@angular/cli": "~11.0.4",
     "@angular/compiler-cli": "~11.0.4",
     "@types/node": "^12.11.1",
+    "@types/faker": "^5.5.6",
+    "@types/lodash": "^4.14.157",
+    "json-server": "^0.16.3",
     "ts-node": "~8.3.0",
     "tslint": "~6.1.0",
     "typescript": "~4.0.2"

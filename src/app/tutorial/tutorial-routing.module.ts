@@ -4,14 +4,14 @@ import { HomeComponent } from './components/home/home.component';
 
 const routes: Routes = [
     {
-        path: 'home',
+        path: '',
         component: HomeComponent
     },
-    { path: '', pathMatch: 'full', redirectTo: 'home' }
+    { path: '**', redirectTo: '' }
 ];
 
 @NgModule({
     imports: [RouterModule.forChild(routes)],
     exports: [RouterModule]
 })
-export class CustomerRoutingModule { }
+export class TutorialRoutingModule { }

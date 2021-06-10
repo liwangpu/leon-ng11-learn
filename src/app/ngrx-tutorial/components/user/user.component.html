@@ -1,0 +1,7 @@
+<div class="header">
+    <button nz-button nzType="default" (click)='changeCurrentUsername()'>修改当前用户姓名</button>
+    <button nz-button nzType="default" (click)='requestAllUsers()'>加载服务器全部用户信息</button>
+</div>
+<div class="content">
+    <p>当前用户信息: {{currentUser|json}}</p>
+</div>

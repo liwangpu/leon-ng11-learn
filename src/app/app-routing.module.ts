@@ -3,15 +3,15 @@ import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
     {
-        path: 'customer',
-        loadChildren: () => import('./customer/customer.module').then(m => m.CustomerModule)
+        path: 'tutorial',
+        loadChildren: () => import('./tutorial/tutorial.module').then(m => m.TutorialModule)
     },
     {
-        path: 'school',
-        loadChildren: () => import('./school/school.module').then(m => m.SchoolModule)
+        path: 'ngrx-tutorial',
+        loadChildren: () => import('./ngrx-tutorial/ngrx-tutorial.module').then(m => m.NgrxTutorialModule)
     },
-    { path: '', pathMatch: 'full', redirectTo: 'customer' },
-    { path: '**', redirectTo: 'customer' }
+    { path: '', pathMatch: 'full', redirectTo: 'tutorial' },
+    { path: '**', redirectTo: 'tutorial' }
 ];
 
 @NgModule({

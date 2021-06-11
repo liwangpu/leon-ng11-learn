@@ -1,0 +1,12 @@
+<div class="header">
+    <form [formGroup]='form'>
+        <nz-input-number class="ipt" formControlName='num1' placeholder="数字1"></nz-input-number>
+        <span class="operator">+</span>
+        <nz-input-number class="ipt" formControlName='num2' placeholder="数字2"></nz-input-number>
+        <span class="operator">=</span>
+        <span>{{sum}}</span>
+    </form>
+</div>
+<div class="content">
+
+</div>

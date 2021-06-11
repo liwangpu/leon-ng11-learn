@@ -1,4 +1,4 @@
-import { IUser } from '../models';
+import { IUser } from '../commom/models';
 
 export const storeKey: string = 'store';
 

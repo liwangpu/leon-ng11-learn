@@ -14,6 +14,9 @@ export const _reducer: ActionReducer<fromState.IStore> = createReducer({
     num1: 0,
     num2: 0
 },
+    on(fromAction.setNumbers, (state: fromState.IStore, { num1, num2 }) => {
+        return { ...state, num1, num2 } as any;
+    }),
     on(fromAction.setUsers, (state: fromState.IStore, { users }) => {
         return { ...state, users } as any;
     }),

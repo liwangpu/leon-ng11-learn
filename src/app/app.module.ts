@@ -4,7 +4,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
-import { MOCK_SERVER_GATEWAY } from './tokens';
+import { MOCK_SERVER_GATEWAY } from './commom/tokens';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
@@ -27,7 +27,7 @@ registerLocaleData(zh);
         StoreModule.forRoot({}),
         EffectsModule.forRoot(),
         StoreDevtoolsModule.instrument({
-            maxAge: 2,
+            maxAge: 20,
             logOnly: false,
         })
     ],

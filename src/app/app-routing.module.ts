@@ -10,6 +10,10 @@ const routes: Routes = [
         path: 'ngrx-tutorial',
         loadChildren: () => import('./ngrx-tutorial/ngrx-tutorial.module').then(m => m.NgrxTutorialModule)
     },
+    {
+        path: 'detection-tutorial',
+        loadChildren: () => import('./detection-tutorial/detection-tutorial.module').then(m => m.DetectionTutorialModule)
+    },
     { path: '', pathMatch: 'full', redirectTo: 'tutorial' },
     { path: '**', redirectTo: 'tutorial' }
 ];

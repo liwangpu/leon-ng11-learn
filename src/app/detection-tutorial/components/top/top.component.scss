@@ -1,0 +1,36 @@
+@import '../../resouces/card.scss';
+
+:host {
+    @include Card;
+    width: 1050px;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 75px;
+        left: 394px;
+        display: block;
+        width: 1px;
+        height: 300px;
+        transform: rotate(60deg);
+        background-color: gray;
+    }
+
+    &::after{
+        content: '';
+        position: absolute;
+        top: 75px;
+        right: 394px;
+        display: block;
+        width: 1px;
+        height: 300px;
+        transform: rotate(-60deg);
+        background-color: gray;
+    }
+
+    div.box{
+        p.title{
+       
+        }
+    }
+}

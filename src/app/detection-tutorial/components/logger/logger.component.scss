@@ -1,0 +1,23 @@
+:host {
+    display: block;
+    user-select: none;
+    padding: .5em;
+
+    &>p.title{
+        font-weight: 700;
+    }
+    span.btn {
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    form {
+        display: flex;
+        flex-flow: row wrap;
+
+        &>* {
+            margin-right: 32px;
+        }
+    }
+}

@@ -2,50 +2,32 @@
     display: flex;
     width: 100%;
     height: 100%;
+    overflow: hidden;
 
     div.navbar {
-        display: flex;
-        flex-flow: column;
-        align-items: center;
-        width: 200px;
-        height: 100%;
-        padding: 1rem;
-        background-color: #1E1E1E;
+        width: 250px;
+        user-select: none;
+        background-color: #000C17;
+        overflow-x: hidden;
+        overflow-y: auto;
 
-        p.title {
-            margin-bottom: 1rem;
-            font-size: 1.2rem;
-            font-weight: 500;
-            color: #23A9F2;
-            outline: none;
-
-            &:hover {
-                cursor: pointer;
-            }
-        }
-
-        a.nav {
-            display: inline-block;
-            text-decoration: none;
-            margin-bottom: .3rem;
-            color: gray;
-
-            &:hover {
-                cursor: pointer;
-                color: orange;
-            }
-
-            &.active {
-                color: orange;
-            }
+        .nav {
+            width: 100%;
         }
     }
 
     div.content {
-        flex: 1 1 0;
-        height: 100%;
-        padding: 1rem;
-        background: linear-gradient(90deg, hsl(24, 20%, 87%) 1px, hsl(24, 20%, 95%)) -3px no-repeat;
-        overflow: auto;
+        position: relative;
+        flex: 1;
+        overflow: hidden;
+
+        div.wrapper {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            padding: 12px;
+            overflow-x: hidden;
+            overflow-y: auto;
+        }
     }
 }

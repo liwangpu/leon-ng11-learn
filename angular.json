@@ -49,13 +49,19 @@
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
-            "tsConfig": "tsconfig.app.json",
+            "tsConfig": "tsconfig.json",
             "aot": true,
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              {
+                "glob": "**/*",
+                "input": "./node_modules/@ant-design/icons-angular/src/inline-svg/",
+                "output": "/assets/"
+              }
             ],
             "styles": [
+              "src/theme.less",
               "src/styles.scss"
             ],
             "scripts": []
@@ -68,6 +74,7 @@
                   "with": "src/environments/environment.prod.ts"
                 }
               ],
+              "tsConfig": "tsconfig.prod.json",
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
@@ -93,7 +100,7 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "port": 8100,
+            "port": 8105,
             "browserTarget": "leon-ng11-learn:build"
           },
           "configurations": {
@@ -106,6 +113,72 @@
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
             "browserTarget": "leon-ng11-learn:build"
+          }
+        }
+      }
+    },
+    "gridx": {
+      "projectType": "library",
+      "root": "projects/gridx",
+      "sourceRoot": "projects/gridx/src",
+      "prefix": "gridx",
+      "schematics": {
+        "@schematics/angular:component": {
+          "inlineTemplate": false,
+          "inlineStyle": false,
+          "style": "scss",
+          "skipTests": true
+        },
+        "@schematics/angular:class": {
+          "skipTests": true
+        },
+        "@schematics/angular:directive": {
+          "skipTests": true
+        },
+        "@schematics/angular:guard": {
+          "skipTests": true
+        },
+        "@schematics/angular:interceptor": {
+          "skipTests": true
+        },
+        "@schematics/angular:pipe": {
+          "skipTests": true
+        },
+        "@schematics/angular:service": {
+          "skipTests": true
+        }
+      },
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "tsConfig": "projects/gridx/tsconfig.lib.json",
+            "project": "projects/gridx/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/gridx/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/gridx/src/test.ts",
+            "tsConfig": "projects/gridx/tsconfig.spec.json",
+            "karmaConfig": "projects/gridx/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/gridx/tsconfig.lib.json",
+              "projects/gridx/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
           }
         }
       }

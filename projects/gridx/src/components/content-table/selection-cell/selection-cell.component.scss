@@ -1,0 +1,46 @@
+:host {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    width: 6px;
+    height: 100%;
+    font-size: 16px;
+    line-height: 16px;
+    background-color: var(--mo-color-primary);
+    transition: width 160ms;
+
+    $selectedSize: 34px;
+
+    &.selection {
+        width: $selectedSize;
+
+        .checkbox {
+            display: block;
+        }
+    }
+
+    &.active {
+        width: $selectedSize;
+
+        .checkbox {
+            display: block !important;
+        }
+    }
+
+    .checkbox {
+        display: none;
+        line-height: 16px;
+        font-size: 16px;
+    }
+}
+
+$bRadius:4px;
+
+// :host-context(.first) {
+//     border-top-left-radius: $bRadius;
+// }
+
+// :host-context(.last) {
+//     border-bottom-left-radius: $bRadius;
+// }

@@ -1,0 +1,7 @@
+<div class="content">
+    <p class="title">
+        <ng-content></ng-content>
+    </p>
+</div>
+<gridx-header-table-sort-flag class="sort-flag" *ngIf='sortable'></gridx-header-table-sort-flag>
+<div class="resizer" cellResizer (afterResize)='afterResize($event)'></div>

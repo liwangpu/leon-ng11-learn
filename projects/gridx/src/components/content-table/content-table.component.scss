@@ -1,0 +1,49 @@
+@import '../../resources/table.scss';
+
+:host {
+    display: block;
+    width: 100%;
+
+    .table {
+        @include GRID_CONTENT_TABLE;
+
+        .row {
+            @include GRID_CONTENT_TABLE_ROW;
+
+            &:hover {
+                @include GRID_CONTENT_TABLE_ROW_HOVER;
+
+                .cell {
+                    background-color: var(--mo-theme-palettes-step-2);
+                }
+            }
+
+            .cell {
+                position: relative;
+                height: 34px;
+                border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+                color: var(--mo-text-color);
+                font-style: normal;
+                font-weight: 350;
+                font-size: 12px;
+                line-height: 18px;
+                background-color: #fff;
+                transition: height 80ms;
+
+                &.first {
+                    display: flex;
+                    flex-flow: row nowrap;
+                    align-items: center;
+                }
+
+                &.seq {
+                    border: none;
+                    padding-right: 8px;
+                    text-align: right;
+                    background-color: transparent;
+                }
+
+            }
+        }
+    }
+}

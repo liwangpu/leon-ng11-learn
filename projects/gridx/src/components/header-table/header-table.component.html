@@ -1,0 +1,16 @@
+<table class="table">
+    <tr class="row">
+        <td class="cell seq" *ngIf='!seqColumn?.hidden' [style.width.px]='seqColumn?.width'
+        [style.minWidth.px]='seqColumn?.width'></td>
+        <!-- <td class="cell operation" *ngIf='!operationColumn?.hidden' [style.width.px]='operationColumn?.width'
+        [style.minWidth.px]='operationColumn?.width'></td> -->
+        <td class="cell" *ngFor='let col of columns;trackBy:trackByFieldFn' [style.width.px]='col.width'
+            [style.minWidth.px]='col.width'>
+            <gridx-header-table-title-cell [class.sort-by-asc]='sort?.field===col.field&&sort?.direction==="asc"'
+                [class.sort-by-desc]='sort?.field===col.field&&sort?.direction==="desc"' [sortable]='col.sort'
+                [field]='col.field'>
+                {{col.name}}
+            </gridx-header-table-title-cell>
+        </td>
+    </tr>
+</table>

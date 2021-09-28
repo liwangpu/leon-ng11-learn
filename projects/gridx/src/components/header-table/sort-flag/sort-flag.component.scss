@@ -1,0 +1,46 @@
+:host {
+    $s: 20px;
+    display: flex;
+    flex-flow: column nowrap;
+    width: $s;
+    height: $s;
+    border-radius: 50%;
+    background: #FFFFFF;
+    box-shadow: 0px 2px 11px rgba(0, 0, 0, 0.12);
+
+    .flag {
+        position: relative;
+        font-size: 11px;
+        color: var(--mo-description-color);
+
+        &.up {
+            top: 1px;
+        }
+
+        &.down {
+            top: -3px;
+        }
+    }
+}
+
+:host-context(.sort-by-asc, .sort-by-desc) {
+    background-color: var(--mo-color-primary);
+
+    .flag {
+        color: #fff;
+    }
+}
+
+$oppositeFlagColor:var(--mo-theme-palettes-step-5);
+
+:host-context(.sort-by-asc) {
+    .flag.down {
+        color: $oppositeFlagColor;
+    }
+}
+
+:host-context(.sort-by-desc) {
+    .flag.up {
+        color: $oppositeFlagColor;
+    }
+}

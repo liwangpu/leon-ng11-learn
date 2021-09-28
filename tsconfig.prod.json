@@ -3,7 +3,12 @@
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "outDir": "./out-tsc/app",
-    "types": []
+    "types": [],
+    "paths": {
+      "gridx": [
+        "dist/gridx"
+      ]
+    },
   },
   "files": [
     "src/main.ts",

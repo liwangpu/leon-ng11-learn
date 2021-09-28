@@ -1,0 +1,19 @@
+<table class="table">
+    <tr class="row"
+        *ngFor='let data of datas;index as i;first as isFirstRow;last as isLastRow;trackBy:trackByIdPropertyFn'>
+        <td class="cell seq" *ngIf='!seqColumn?.hidden' [style.width.px]='seqColumn?.width'
+            [style.minWidth.px]='seqColumn?.width' [style.height.px]='rowHeight'>{{i+1}}</td>
+        <!-- <td class="cell operation" *ngIf='!operationColumn?.hidden' [style.width.px]='operationColumn?.width'
+            [style.minWidth.px]='operationColumn?.width'>
+            <gridx-content-table-selection-cell [class.first]='isFirst' [class.last]='isLast' ></gridx-content-table-selection-cell>
+        </td> -->
+        <td class="cell" *ngFor='let col of columns;first as isFirstCell;trackBy:trackByFieldFn'
+            [style.width.px]='col.width' [style.minWidth.px]='col.width' [style.height.px]='rowHeight'
+            [class.first]='isFirstCell'>
+            <gridx-content-table-selection-cell *ngIf='isFirstCell' [id]='data[idPropery]'>
+            </gridx-content-table-selection-cell>
+            <gridx-content-table-cell-container [field]='col.field' [fieldType]='col.fieldType' [data]='data'>
+            </gridx-content-table-cell-container>
+        </td>
+    </tr>
+</table>

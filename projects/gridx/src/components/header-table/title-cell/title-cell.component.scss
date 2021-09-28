@@ -1,0 +1,73 @@
+:host {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 40px;
+    border-radius: 3px;
+    user-select: none;
+
+    &.sortable {
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    &:hover {
+        background-color: #fff;
+
+        .content {
+            .title {
+                color: var(--mo-description-color);
+            }
+        }
+
+        .sort-flag {
+            visibility: visible;
+        }
+    }
+
+    .content {
+        position: absolute;
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+
+
+        .title {
+            flex: 1;
+            text-align: center;
+            font-size: 14px;
+            font-weight: 350;
+            line-height: 14px;
+            margin: 0;
+            padding: 0;
+            color: var(--mo-text-color);
+        }
+    }
+
+    .sort-flag {
+        position: absolute;
+        top: -12px;
+        left: 0;
+        right: 0;
+        visibility: hidden;
+        margin: auto;
+    }
+
+    .resizer {
+        position: absolute;
+        top: 0;
+        right: 0;
+        display: block;
+        height: 100%;
+        cursor: e-resize;
+    }
+}
+
+:host-context(.sort-by-asc, .sort-by-desc) {
+    .sort-flag {
+        visibility: visible;
+    }
+}

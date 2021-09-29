@@ -1,9 +1,10 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Injector } from '@angular/core';
 import { ComponentStore } from '@ngrx/component-store';
 import * as _ from 'lodash';
 import { Observable, pipe, UnaryFunction } from 'rxjs';
 import { map } from 'rxjs/operators';
 import * as fromEnum from '../enums';
+import * as fromToken from '../tokens';
 import * as fromModel from '../models';
 import * as fromUtil from '../utils';
 
@@ -29,6 +30,8 @@ const contentTableHeightMap: { [key: string]: number } = {
 }
 
 export interface IGridState {
+  views: Array<fromModel.IFilterView>;
+  activeViewId?: string;
   columns: Array<fromModel.IGridColumn>;
   datas: Array<{ [key: string]: any }>;
   sort?: fromModel.ISortEvent;
@@ -51,8 +54,13 @@ export class GridStoreService extends ComponentStore<IGridState> {
   public readonly sort$ = this.select(s => s.sort).pipe(shadow());
   public readonly selectedIds$ = this.select(s => s.selectedIds).pipe(shadow());
   public readonly contentTableRowHeight$ = this.select(s => s.contentTableRowHeight);
-  public constructor() {
+  @fromUtil.LazyService(fromToken.GRIDX_STORE)
+  private readonly gridxStore: fromToken.IGridXStore;
+  public constructor(
+    protected injector: Injector
+  ) {
     super({
+      views: [],
       columns: [],
       datas: [],
       selectedIds: [],
@@ -60,6 +68,15 @@ export class GridStoreService extends ComponentStore<IGridState> {
       staticColumns: [staticSeqColumn, staticOperationColumn],
       contentTableRowHeight: contentTableHeightMap[fromEnum.ContentRowHeightType.normal]
     });
+  }
+
+  public setViews(views: Array<fromModel.IFilterView>, activeViewId?: string): void {
+    if (!activeViewId && views.length) {
+      activeViewId = views[0].id;
+    }
+
+    let activeView = activeViewId ? views.find(v => v.id === activeViewId) : null;
+    this.patchState({ views, activeViewId, columns: activeView ? [...activeView.columns] : [] });
   }
 
   public setColumns(columns: Array<fromModel.IGridColumn>): void {
@@ -101,6 +118,12 @@ export class GridStoreService extends ComponentStore<IGridState> {
     const rowHeight = contentTableHeightMap[heightType];
     this.patchState({ contentTableRowHeight: rowHeight });
   }
+
+  public async refreshDatas(): Promise<void> {
+    const res = await this.gridxStore.onQuery({});
+    this.patchState({ datas: res.items });
+  }
+
 
 
 }

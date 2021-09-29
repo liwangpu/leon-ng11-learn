@@ -15,8 +15,14 @@ import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { StateStoreModule } from './state-store';
+import { NzButtonModule } from 'ng-zorro-antd/button';
+import { IconDefinition } from '@ant-design/icons-angular';
+import { MenuFoldOutline, MenuUnfoldOutline } from '@ant-design/icons-angular/icons';
+import { NzIconModule } from 'ng-zorro-antd/icon';
 
 registerLocaleData(zh);
+
+const icons: Array<IconDefinition> = [MenuFoldOutline, MenuUnfoldOutline];
 
 @NgModule({
     declarations: [
@@ -36,7 +42,9 @@ registerLocaleData(zh);
             maxAge: 20,
             logOnly: false,
         }),
-        StateStoreModule
+        StateStoreModule,
+        NzButtonModule,
+        NzIconModule.forRoot(icons),
     ],
     providers: [{ provide: NZ_I18N, useValue: zh_CN }],
     bootstrap: [AppComponent]

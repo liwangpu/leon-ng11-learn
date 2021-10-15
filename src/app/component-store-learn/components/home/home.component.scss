@@ -1,0 +1,11 @@
+:host {
+    display: block;
+
+    div.buttons {
+        display: flex;
+
+        &>* {
+            margin-right: 12px;
+        }
+    }
+}

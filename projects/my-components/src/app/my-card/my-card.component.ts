@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, Input } from '@angular/core';
 
 @Component({
   selector: 'app-my-card',
@@ -8,9 +8,15 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 })
 export class MyCardComponent implements OnInit {
 
-  constructor() { }
+  @Input()
+  public title: string = '默认标题';
+  public constructor() { }
 
-  ngOnInit(): void {
+  public ngOnInit(): void {
+  }
+
+  public updateTitle(): void {
+    this.title = new Date().toTimeString();
   }
 
 }

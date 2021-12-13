@@ -56,9 +56,12 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "elements/my-components.css"
             ],
-            "scripts": []
+            "scripts": [
+              "elements/my-components.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -93,7 +96,7 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "port": 8100,
+            "port": 8108,
             "browserTarget": "leon-ng11-learn:build"
           },
           "configurations": {
@@ -172,6 +175,7 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
+            "port": 8109,
             "browserTarget": "my-components:build"
           },
           "configurations": {

@@ -5,9 +5,6 @@ import { createCustomElement } from '@angular/elements';
 import { BrowserModule } from '@angular/platform-browser';
 
 @NgModule({
-  // declarations: [
-  //   MyCardComponent
-  // ],
   imports: [
     BrowserModule,
     CommonModule

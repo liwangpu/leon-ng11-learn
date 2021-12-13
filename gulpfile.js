@@ -18,7 +18,7 @@ async function concatElementFiles(cb) {
     ];
     await fsExtra.ensureDir('elements');
     await concat(files, 'elements/my-components.js');
-    await fsExtra.copyFile('./dist/my-components/styles.css', 'elements/styles.css');
+    await fsExtra.copyFile('./dist/my-components/styles.css', 'elements/my-components.css');
     cb();
 }
 
@@ -32,5 +32,5 @@ async function copyElementToUsingProject(cb) {
 }
 
 exports.concatenate = series(concatElementFiles);
-exports.copyElementToUsingProject = series(copyElementToUsingProject);
+// exports.copyElementToUsingProject = series(copyElementToUsingProject);
 

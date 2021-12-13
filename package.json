@@ -8,9 +8,9 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "build:elements": "ng build --prod --project my-components --output-hashing none && npm run pack:elements && cp projects/my-components/package.json dist/my-components",
+    "build:elements": "ng build --prod --project my-components --output-hashing none && npm run pack:elements",
     "pack:elements": "gulp concatenate",
-    "copy-to-using-project": "gulp copyElementToUsingProject"
+    "start:my-component": "ng serve my-components"
   },
   "private": true,
   "dependencies": {

@@ -3,13 +3,12 @@ import { Injector, NgModule } from '@angular/core';
 import { MyCardComponent } from './my-card/my-card.component';
 import { createCustomElement } from '@angular/elements';
 import { BrowserModule } from '@angular/platform-browser';
-
 @NgModule({
   imports: [
     BrowserModule,
     CommonModule
   ],
-  providers: [],
+  providers: []
 })
 export class AppModule {
 

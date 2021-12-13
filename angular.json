@@ -56,11 +56,9 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss",
-              "elements/my-components.css"
+              "src/styles.scss"
             ],
             "scripts": [
-              "elements/my-components.js"
             ]
           },
           "configurations": {

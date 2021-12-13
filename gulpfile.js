@@ -8,29 +8,22 @@ const rename = require('gulp-rename');
 const fsExtra = require('fs-extra');
 const concat = require('concat');
 
-const componentUserDir = 'D://Leon/AppCode/angular/ng 11/zorror';
-
 async function concatElementFiles(cb) {
     const files = [
         './dist/my-components/runtime.js',
         './dist/my-components/polyfills.js',
         './dist/my-components/main.js',
     ];
-    await fsExtra.ensureDir('elements');
-    await concat(files, 'elements/my-components.js');
-    await fsExtra.copyFile('./dist/my-components/styles.css', 'elements/my-components.css');
+    await fsExtra.ensureDir('src/assets/elements');
+    await concat(files, 'src/assets/elements/my-components.js');
+    await fsExtra.copyFile('./dist/my-components/styles.css', 'src/assets/elements/my-components.css');
+    const templateJs = fs.readFileSync('amd-module-template.js', 'utf8');
+    const componentJs = fs.readFileSync('src/assets/elements/my-components.js', 'utf8');
+    const dyComponentJs = templateJs.replace('//registry-place-holder', componentJs);
+    fs.writeFileSync('src/assets/elements/dynamic-components.js', dyComponentJs, 'utf8');
     cb();
 }
 
-async function copyElementToUsingProject(cb) {
-    // await del.sync([`${componentUserDir}/elements/**`], { force: true });
-    src(`elements/**`)
-        .pipe(dest(`${componentUserDir}/elements`)).on('end', () => {
-            console.log('element copy finished');
-            cb();
-        });
-}
 
 exports.concatenate = series(concatElementFiles);
-// exports.copyElementToUsingProject = series(copyElementToUsingProject);
 

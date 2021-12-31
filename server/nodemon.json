@@ -1,0 +1,11 @@
+{
+    "verbose": true,
+    "delay": "250",
+    "watch": [
+        "app.js",
+        "bin/",
+        "public/",
+        "routes/",
+        "views/"
+    ]
+}

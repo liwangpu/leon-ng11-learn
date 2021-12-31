@@ -1,8 +1,4 @@
-<div class="navbar">
-    <p class="title" routerLink="/">Angular 学习项目</p>
-    <!-- <a class="nav" routerLink="/ngrx-tutorial" routerLinkActive="active">Ngrx</a>
-    <a class="nav" routerLink="/detection-tutorial" routerLinkActive="active">Detection</a> -->
-</div>
-<div class="content">
-    <router-outlet></router-outlet>
-</div>
+<button (click)='clearToken()'>清除Token</button>
+<button (click)='requestData()'>单个请求</button>
+
+<button (click)='batchRequestData()'>批量请求</button>

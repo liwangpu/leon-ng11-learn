@@ -6,7 +6,9 @@
     "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
-    "lint": "ng lint"
+    "lint": "ng lint",
+    "build:single-spa:leon-ng11-learn": "ng build leon-ng11-learn --prod --deploy-url http://localhost:4200/",
+    "serve:single-spa:leon-ng11-learn": "ng s --project leon-ng11-learn --disable-host-check --port 9002 --live-reload false"
   },
   "private": true,
   "dependencies": {
@@ -22,12 +24,15 @@
     "faker": "^5.5.3",
     "lodash": "^4.17.21",
     "moment": "^2.29.1",
-    "subsink": "^1.0.1",
     "rxjs": "~6.6.0",
+    "single-spa": ">=4.0.0",
+    "single-spa-angular": "^4.9.2",
+    "subsink": "^1.0.1",
     "tslib": "^2.0.0",
     "zone.js": "~0.11.3"
   },
   "devDependencies": {
+    "@angular-builders/custom-webpack": "11.1.2-beta.0",
     "@angular-devkit/build-angular": "~0.1100.4",
     "@angular/cli": "~11.2.14",
     "@angular/compiler-cli": "~11.2.14",

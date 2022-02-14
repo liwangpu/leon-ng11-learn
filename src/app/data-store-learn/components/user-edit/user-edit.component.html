@@ -1,0 +1,15 @@
+<form [formGroup]="form">
+    <div class="fit">
+        <label>姓名</label>
+        <input type="text" formControlName="name">
+    </div>
+    <div class="fit">
+        <label>年纪</label>
+        <input type="number" formControlName="age">
+    </div>
+    <div class="fit">
+        <label>备注</label>
+        <input type="text" formControlName="info">
+    </div>
+</form>
+<button (click)="add()">添加</button>

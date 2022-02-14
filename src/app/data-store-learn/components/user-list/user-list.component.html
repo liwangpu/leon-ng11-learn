@@ -1,0 +1,19 @@
+<div class="header">
+    <app-user-edit></app-user-edit>
+</div>
+<table>
+    <thead>
+        <tr>
+            <th>姓名</th>
+            <th>年纪</th>
+            <th>描述</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let it of users$ | async">
+            <td>{{it.name}}</td>
+            <td>{{it.age}}</td>
+            <td>{{it.info}}</td>
+        </tr>
+    </tbody>
+</table>

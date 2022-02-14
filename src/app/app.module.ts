@@ -18,6 +18,8 @@ import { NzButtonModule } from 'ng-zorro-antd/button';
 import { IconDefinition } from '@ant-design/icons-angular';
 import { MenuFoldOutline, MenuUnfoldOutline } from '@ant-design/icons-angular/icons';
 import { NzIconModule } from 'ng-zorro-antd/icon';
+import { entityConfig } from './data-store';
+import { DefaultDataServiceConfig, EntityDataModule } from '@ngrx/data';
 
 registerLocaleData(zh);
 
@@ -40,6 +42,7 @@ const icons: Array<IconDefinition> = [MenuFoldOutline, MenuUnfoldOutline];
             maxAge: 20,
             logOnly: false,
         }),
+        EntityDataModule.forRoot(entityConfig),
         StateStoreModule,
         NzButtonModule,
         NzIconModule.forRoot(icons),

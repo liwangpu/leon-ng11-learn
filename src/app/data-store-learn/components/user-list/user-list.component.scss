@@ -1,0 +1,21 @@
+:host {
+    display: block;
+
+    div.header {
+        display: block;
+        justify-content: space-between;
+margin-bottom: 12px;
+
+    }
+
+    table {
+        border-collapse: collapse;
+        width: 100%;
+
+        th,
+        td {
+            border: 1px solid #CACDD1;
+            padding: 4px 12px;
+        }
+    }
+}

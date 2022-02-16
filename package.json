@@ -6,7 +6,8 @@
     "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
-    "lint": "ng lint"
+    "lint": "ng lint",
+    "server": "json-server db.json --port 3005"
   },
   "private": true,
   "dependencies": {
@@ -42,6 +43,7 @@
     "@types/faker": "^5.5.6",
     "@types/node": "^12.11.1",
     "ts-node": "~8.3.0",
-    "typescript": "~4.1.5"
+    "typescript": "~4.1.5",
+    "json-server": "^0.16.3"
   }
 }

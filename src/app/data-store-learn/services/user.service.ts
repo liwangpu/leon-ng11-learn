@@ -11,5 +11,5 @@ export class UserService extends EntityCollectionServiceBase<IUser> {
     super('User', serviceElementsFactory);
   }
 
-  
+  // create
 }

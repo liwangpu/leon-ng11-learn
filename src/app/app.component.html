@@ -1,8 +1,7 @@
-<div class="navbar">
-    <p class="title" routerLink="/">Angular 学习项目</p>
-    <!-- <a class="nav" routerLink="/ngrx-tutorial" routerLinkActive="active">Ngrx</a>
-    <a class="nav" routerLink="/detection-tutorial" routerLinkActive="active">Detection</a> -->
-</div>
-<div class="content">
-    <router-outlet></router-outlet>
+<form [formGroup]="form">
+    <label>附件</label>
+    <input type="file" accept=".xlsx" (change)="parseExcelFile2($event.target.files)">
+</form>
+<div class="buttons">
+    <button (click)="readExcel()">解析</button>
 </div>

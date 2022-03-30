@@ -3,5 +3,7 @@
     <input type="file" accept=".xlsx" (change)="parseExcelFile2($event.target.files)">
 </form>
 <div class="buttons">
-    <button (click)="readExcel()">解析</button>
+    <button (click)="upload()">提交</button>
+
+    <button (click)="downloadTemplate()">下载模板</button>
 </div>
